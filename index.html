@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <title>SASjs Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"> -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/buble.css" />
+</head>
+
+<body>
+  <nav>
+    <a href="#/user-guide/user-overview">User Guide</a>
+    <a href="#/developer-guide/developer-overview/">Developer Guide</a>
+    <a href="#/admin-guide/admin-overview">Admin Guide</a>
+    <a href="#" onclick='window.open(window.location.origin + window.location.pathname + "static/sas/");return false;'>
+      SAS Code
+    </a>
+    <a href="#" onclick='window.open(window.location.origin + window.location.pathname + "static/js/");return false;'>
+      JS Code
+    </a>
+  </nav>
+  <div id="app">SASjs Docs are loading...</div>
+  <script>
+    window.$docsify = {
+      repo: 'https://github.com/sasjs/docs',
+      loadNavbar: false,
+      loadSidebar: '_sidebar.md',
+      basePath: window.location.pathname,
+      logo: '/_media/sasjs_square.png',
+      name: 'SASjs',
+      autoHeader: true,
+      search: 'auto',
+      relativePath: true,
+      routermode: 'history'
+    }
+  </script>
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+
+
+</body>
+
+</html>
