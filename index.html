@@ -15,12 +15,14 @@
 <body>
   <nav>
     <a href="#/user-guide/user-overview">User Guide</a>
-    <a href="#/developer-guide/developer-overview/">Developer Guide</a>
+    <a href="#/developer-guide/developer-overview">Developer Guide</a>
     <a href="#/admin-guide/admin-overview">Admin Guide</a>
-    <a href="#" onclick='window.open(window.location.origin + window.location.pathname + "static/sas/");return false;'>
+    <!--a href="#" onclick='window.open(window.location.origin + window.location.pathname + "static/sas/");return false;'-->
+    <a href="#" onclick='window.open("https://core.sasjs.io");return false;'>
       SAS Code
     </a>
-    <a href="#" onclick='window.open(window.location.origin + window.location.pathname + "static/js/");return false;'>
+    <!--a href="#" onclick='window.open(window.location.origin + window.location.pathname + "static/js/");return false;'-->
+    <a href="#" onclick='window.open("https://adapter.sasjs.io");return false;'>
       JS Code
     </a>
   </nav>
@@ -31,7 +33,7 @@
       loadNavbar: false,
       loadSidebar: '_sidebar.md',
       basePath: window.location.pathname,
-      logo: '/_media/sasjs_square.png',
+      logo: '/_media/sasjs_240x120.png',
       name: 'SASjs',
       autoHeader: true,
       search: 'auto',
