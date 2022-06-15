@@ -1,4 +1,4 @@
-* [User Guide](/user-guide/user-overview.md)
+* [User Guide](#/user-guide/user-overview.md)
 * [Developer Guide](/developer-guide/developer-overview.md)
   * [Frontend](/developer-guide/frontend.md)
   * [Backend](/developer-guide/backend.md)
