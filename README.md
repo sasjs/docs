@@ -1,9 +1,17 @@
 # SASjs Docs
 
-This repo is a template documentation site for use in the various SASjs seed apps.  You can view it live, here:  https://sasjs.github.io/docs/
+This repo is a template documentation site, used in all the SASjs seed apps.  Live version:  https://sasjs.github.io/docs/
 
-The project is embedded into each SASjs Seed App as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) - meaning that the source can be maintained in one place.
+The README file (which you are now reading) is the homepage.  Describe your project here!
 
-When creating apps using the [SASjs create](https://cli.sasjs.io/create/) command, the submodule is cloned, and the link broken, for ease of use.
+The site is built using Docsify - documentation is [here](https://docsify.js.org/#/?id=docsify).
 
-[Contributions](https://github.com/sasjs/docs) are welcomed!
+Some nice things about Docsify:
+
+1.  It runs with strict CSP.  To achieve this, we have put the external assets in this folder: `static/assets` 
+2.  It runs as a static site - meaning nothing to compile, no need for NPM.
+3.  You write your docs in markdown (easy)
+4.  Search capability
+5.  It's FOSS! 
+
+[Contributions](https://github.com/sasjs/docs) are welcomed.
