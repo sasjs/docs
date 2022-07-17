@@ -1,6 +1,6 @@
 # SASjs Docs
 
-This repo is a template documentation site, used in all the SASjs seed apps.  Live version:  https://sasjs.github.io/docs/
+This repo is a template documentation site, which provides a suggested user / developer / admin guide for all SASjs seed apps.  You can view the live version here:  https://sasjs.github.io/docs/
 
 The README file (which you are now reading) is the homepage.  Describe your project here!
 
