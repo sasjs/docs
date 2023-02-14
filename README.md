@@ -4,7 +4,7 @@ This repo is a template documentation site, which provides a suggested user / de
 
 The README file (which you are now reading) is the homepage.  Describe your project here!
 
-The site is built using Docsify - documentation is [here](https://docsify.js.org/#/?id=docsify).
+The site makes use of Docsify - documentation is [here](https://docsify.js.org/#/?id=docsify).
 
 Some nice things about Docsify:
 
