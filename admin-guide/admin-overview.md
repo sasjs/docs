@@ -1,6 +1,6 @@
 # Admin Guide - Overview
 
-This application was built on the [SASjs](https://github.com/sasjs) framework - which provides an opinionated (consistent) approach for building and deploying applications on the SAS Platforms.
+This application was built on the [SASjs](https://github.com/sasjs) framework - which provides an opinionated (consistent) approach for building and deploying applications on SAS Platforms.
 
 SASjs apps have three major server-side components:
 
@@ -20,15 +20,7 @@ The following software is needed locally:
 
 ## Frontend
 
-To compile the frontend from source, simply run the following command from the root of the project:
-
-```bash
-npm run build
-```
-
-This will compile the code documentation for both SAS and JS, and prepare a production build of the SASjs interface.  When this completes, the `build` folder will contain all necessary files.
-
-Before deploying this folder, there are some configuration items inside the `build/index.html` file as follows:
+To deploy to a standalone web server there are some configuration items to modify inside the `index.html` file as follows:
 
 ```
     serverUrl: 'https://yourSASserver:5000',
@@ -36,7 +28,7 @@ Before deploying this folder, there are some configuration items inside the `bui
     serverType: 'SASJS',
 ```
 
-The `serverUrl` can be _removed_ entirely if the app is being served directly from the SAS server itself.  Otherwise, the SAS Server URL (and port, if not 80) should be provided here.
+The `serverUrl` can be _removed_ entirely if the app is being served directly from the SAS server itself.  Otherwise, the SAS Server URL (and port, if not 80/443) should be provided here.
 
 The `appLoc` is the location in SAS Drive (or Metadata, or SASjs Drive) under which the backend services will be deployed.
 
@@ -46,31 +38,8 @@ Once this file is adjusted, the contents of the build folder can be deployed to 
 
 ## Backend
 
-SAS code is compiled locally, and deployed to SAS as a series of self contained Jobs and Services.  The production SAS server should be configured as an object in the Targets array of the `sasjs/sasjsconfig.json` file.  The following attributes are necessary:
+Backend deployment depends on the server type, as follows:
 
-* `name` - a unique name for the target (eg `"mytarget"`)
-* `serverUrl` - the SAS server on which the services will be deployed
-* `appLoc` - the root folder in which the services will be saved (SAS Drive or Metadata)
-* `serverType` - either SAS9, SASVIYA or SASJS.
-
-
-Before the deployment can take place, the CLI needs to be authenticated. First, install the  CLI as follows:
-
-```
-npm install -g @sasjs/cli
-```
-
-Next, authenticate against the previously defined target, eg:
-
-```bash
-sasjs auth -t mytarget
-```
-
-The subsequent prompts will depend on whether the server type is SAS 9, SASjs, or Viya.  For more information, see the documentation here: [https://cli.sasjs.io/auth/](https://cli.sasjs.io/auth/).  Note that SAS 9 deploys require a 'runner' in the home directory of the deployment account.
-
-Once authenticated, the services can be compiled, built & deployed using a single command:
-
-```
-sasjs cbd -t mytarget
-```
-
+* SASJS - auto deployed when importing the app zip
+* SAS9 - execute the sas9.sas program after setting the appLoc macro variable at the start
+* SASVIYA - execute the viya.sas program after setting the appLoc macro variable at the start
