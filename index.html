@@ -29,11 +29,20 @@
   </nav>
   <div id="app">SASjs Docs are loading...</div>
   <script>
+    /*
+      The folder the markdown lives in, derived from the page's own path. The
+      seed apps link to `docs/index.html` rather than `docs/`, because a SAS app
+      stream answers 500 for a directory with no index - so the pathname ends in
+      the file name, and using it as the base made docsify request
+      `index.html_sidebar.md` and render "404 - Not found".
+    */
+    var docsBase = window.location.pathname.replace(/index\.html$/, '')
+
     window.$docsify = {
       repo: 'https://github.com/sasjs/docs',
       loadNavbar: false,
       loadSidebar: '_sidebar.md',
-      basePath: window.location.pathname,
+      basePath: docsBase,
       logo: 'static/assets/img/sasjs_240x120.png',
       name: 'SASjs',
       autoHeader: true,
